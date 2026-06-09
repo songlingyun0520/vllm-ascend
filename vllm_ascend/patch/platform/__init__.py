@@ -51,3 +51,6 @@ if envs.VLLM_ASCEND_APPLY_DSV4_PATCH:
     import vllm_ascend.patch.platform.patch_speculative_config  # noqa
 
 import vllm_ascend.patch.platform.patch_scheduler  # noqa
+
+if os.getenv("VLLM_ASCEND_DSA_MTP_ENABLE", "0").lower() in ("1", "true", "yes", "on"):
+    import vllm_ascend.patch.platform.patch_dsa_mtp_fraction  # noqa
